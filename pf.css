@@ -1,0 +1,179 @@
+body {
+  background-color: #acc8a2;
+  color: #1a2517;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: "Macondo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ga {
+  color: #acc8a2;
+  padding-left: 30px;
+  font-family: "Cookie", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48px;
+}
+
+.btn {
+  padding-left: 20px;
+  padding-right: 25px;
+  text-decoration: none;
+  color: #acc8a2;
+  font-family: "Macondo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#nav {
+  background-color: #1a2517;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.png {
+  width: 77%;
+  height: auto;
+  padding-left: 220.5px;
+}
+
+#intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-bottom: 100px;
+  font-size: 20px;
+}
+
+.hello {
+  width: 120%;
+  line-height: 1.6;
+}
+
+.hi {
+  font-family: "Montez", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+}
+
+.line {
+  padding-left: 30px;
+}
+
+#skills {
+  display: flex;
+  gap: 100px;
+  list-style: none;
+}
+.fend,
+.tools,
+.pyth,
+.soft {
+  animation: fadeUp linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  width: 250px;
+  border: 2px solid #1a2517;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #1a2517;
+  color: #acc8a2;
+  text-align: center;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.fw,
+.tls,
+.py,
+.sft {
+  font-size: 24px;
+  margin: 10px;
+}
+.projects {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+.alc,
+.sflix,
+.map {
+    animation: fadeUp linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  width: 410px;
+  border: 2px solid #1a2517;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #1a2517;
+  color: #acc8a2;
+  text-align: center;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.a,
+.b,
+.c {
+  font-size: 24px;
+  margin: 10px;
+}
+#portfolio,
+#project,
+#about,
+#connect {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 40px;
+  font-family: "Macondo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.line2 {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+#aboutme {
+    animation: fadeUp linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  width: 70%;
+  border: 2px solid #1a2517;
+  border-radius: 10px;
+  padding: 10px;
+}
+#contact {
+    animation: fadeUp linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  border: 2px solid #1a2517;
+  border-radius: 10px;
+  padding: 10px;
+}
+#footer {
+  background-color: #1a2517;
+  color: #acc8a2;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 50px;
+}
+.d {
+  text-decoration: none;
+  color: #1a2517;
+  font-weight: bold;
+}

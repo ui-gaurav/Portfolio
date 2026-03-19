@@ -329,18 +329,24 @@ h1, h2, h3, h4, .logo {
   opacity: 0.6;
 }
 
-.image-wrapper img {
+.image-wrapper img, .hero-spline {
   width: 100%;
   max-width: 500px;
-  height: auto;
+  height: 500px; /* Fixed height for 3D model */
   border-radius: 20px;
   display: block;
   object-fit: cover;
   transition: transform 0.5s ease;
+  background: transparent;
 }
 
-.image-wrapper:hover img {
-  transform: scale(1.05);
+.image-wrapper:hover img, .image-wrapper:hover .hero-spline {
+  transform: scale(1.02);
+}
+
+/* Hide Spline branding watermarks if visible */
+.hero-spline::part(logo) {
+  display: none !important;
 }
 
 /* --- Skills Bento Grid --- */

@@ -48,14 +48,17 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="cube-container">
-                    <div class="cube">
-                        <div class="face front"><i class="fa-brands fa-html5"></i></div>
-                        <div class="face back"><i class="fa-brands fa-css3-alt"></i></div>
-                        <div class="face right"><i class="fa-brands fa-js"></i></div>
-                        <div class="face left"><i class="fa-brands fa-react"></i></div>
-                        <div class="face top"><i class="fa-brands fa-node-js"></i></div>
-                        <div class="face bottom"><i class="fa-brands fa-python"></i></div>
+                <div class="cartoon-guy">
+                    <div class="head">
+                        <div class="eye left-eye">
+                            <div class="pupil"></div>
+                        </div>
+                        <div class="eye right-eye">
+                            <div class="pupil"></div>
+                        </div>
+                        <div class="blush left"></div>
+                        <div class="blush right"></div>
+                        <div class="mouth"></div>
                     </div>
                 </div>
             </div>
@@ -241,6 +244,21 @@
             blobs.forEach((blob, index) => {
                 let speed = (index + 1) * -0.1;
                 blob.style.transform = `translateY(${totalScroll * speed}px)`;
+            });
+        });
+
+        // Cartoon Eye Tracking
+        const pupils = document.querySelectorAll('.pupil');
+        document.addEventListener('mousemove', (e) => {
+            pupils.forEach(pupil => {
+                let rect = pupil.parentElement.getBoundingClientRect();
+                let x = rect.left + rect.width / 2;
+                let y = rect.top + rect.height / 2;
+                
+                let radian = Math.atan2(e.clientY - y, e.clientX - x);
+                let distance = 10; // Maximum eye movement distance
+                
+                pupil.style.transform = `translate(${Math.cos(radian) * distance}px, ${Math.sin(radian) * distance}px)`;
             });
         });
     </script>

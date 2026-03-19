@@ -1,14 +1,14 @@
 /* --- CSS Reset & Variables --- */
 :root {
-  --bg-color: #0a0a0a;
-  --text-main: #eaecf0;
-  --text-muted: #98a2b3;
-  --primary: #00f2fe;
-  --secondary: #4facfe;
-  --accent: #9b51e0;
-  --glass-bg: rgba(26, 27, 31, 0.4);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --bg-color: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --primary: #0284c7;
+  --secondary: #2563eb;
+  --accent: #7c3aed;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
   
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -145,7 +145,7 @@ h1, h2, h3, h4, .logo {
   transform: translateX(-50%);
   width: 90%;
   max-width: 1200px;
-  background: rgba(10, 10, 10, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
@@ -155,13 +155,13 @@ h1, h2, h3, h4, .logo {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
   font-size: 2rem;
   font-weight: 900;
-  color: #fff;
+  color: var(--text-main);
   letter-spacing: -2px;
 }
 
@@ -237,7 +237,7 @@ h1, h2, h3, h4, .logo {
   font-size: 5rem;
   font-weight: 900;
   margin-bottom: 25px;
-  color: #fff;
+  color: var(--text-main);
   line-height: 1.1;
 }
 
@@ -270,26 +270,26 @@ h1, h2, h3, h4, .logo {
 
 .primary-btn {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #000;
+  color: #fff;
   border: none;
-  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.3);
 }
 
 .primary-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 242, 254, 0.6);
-  color: #000;
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.5);
+  color: #fff;
 }
 
 .secondary-btn {
-  background: rgba(255, 255, 255, 0.03);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--text-main);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(10px);
 }
 
 .secondary-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.8);
   border-color: var(--primary);
   color: var(--primary);
   transform: translateY(-3px);
@@ -307,46 +307,47 @@ h1, h2, h3, h4, .logo {
   align-items: center;
 }
 
-.image-wrapper {
-  overflow: hidden;
-  border-radius: 30px;
-  padding: 12px;
-  position: relative;
+.cube-container {
+  width: 300px;
+  height: 300px;
+  perspective: 1200px;
+  margin: 0 auto;
 }
 
-.image-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: 30px;
-  padding: 2px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: 10;
-  opacity: 0.6;
-}
-
-.image-wrapper img, .hero-spline {
+.cube {
   width: 100%;
-  max-width: 500px;
-  height: 500px; /* Fixed height for 3D model */
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 15s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid var(--primary);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  color: var(--primary);
+  box-shadow: 0 0 20px rgba(2, 132, 199, 0.2);
   border-radius: 20px;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-  background: transparent;
 }
 
-.image-wrapper:hover img, .image-wrapper:hover .hero-spline {
-  transform: scale(1.02);
-}
+.front  { transform: rotateY(0deg) translateZ(150px); }
+.back   { transform: rotateY(180deg) translateZ(150px); }
+.right  { transform: rotateY(90deg) translateZ(150px); }
+.left   { transform: rotateY(-90deg) translateZ(150px); }
+.top    { transform: rotateX(90deg) translateZ(150px); }
+.bottom { transform: rotateX(-90deg) translateZ(150px); }
 
-/* Hide Spline branding watermarks if visible */
-.hero-spline::part(logo) {
-  display: none !important;
+@keyframes rotateCube {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
 }
 
 /* --- Skills Bento Grid --- */
@@ -374,7 +375,7 @@ h1, h2, h3, h4, .logo {
 .tech-card h3 {
   font-size: 1.6rem;
   margin-bottom: 20px;
-  color: #fff;
+  color: var(--text-main);
 }
 
 .skill-list {
@@ -427,7 +428,7 @@ h1, h2, h3, h4, .logo {
 .project-info h3 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #fff;
+  color: var(--text-main);
 }
 
 .project-info p {
@@ -453,7 +454,7 @@ h1, h2, h3, h4, .logo {
 
 .about-content .lead {
   font-size: 1.3rem;
-  color: #fff;
+  color: var(--text-main);
   font-weight: 500;
   margin-bottom: 25px;
 }
@@ -482,7 +483,7 @@ h1, h2, h3, h4, .logo {
   text-decoration: none;
   color: var(--text-main);
   padding: 18px 25px;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 0, 0, 0.02);
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   transition: all 0.3s ease;
@@ -498,10 +499,10 @@ h1, h2, h3, h4, .logo {
 }
 
 .contact-item:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.08);
   border-color: var(--primary);
   transform: translateX(10px);
-  color: #fff;
+  color: var(--text-main);
 }
 
 .contact-item:hover i {
@@ -513,7 +514,7 @@ h1, h2, h3, h4, .logo {
   text-align: center;
   padding: 40px;
   margin-top: 50px;
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   border-top: 1px solid var(--glass-border);
   color: var(--text-muted);
@@ -586,7 +587,7 @@ h1, h2, h3, h4, .logo {
     top: calc(100% + 15px);
     left: 0;
     width: 100%;
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 25px 0;

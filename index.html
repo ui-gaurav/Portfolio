@@ -1,123 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Gaurav Arya</title>
+    <title>Gaurav Arya | Frontend Developer</title>
+    <!-- Modern Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Macondo&family=Montez&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="pf.css">
 </head>
-
 <body>
-    <div id="nav">
-        <h1 class="ga">Gaurav.</h1>
-        <div class="bar">
-            <a href="#nav" class="btn">Home</a>
-            <a href="#portfolio" class="btn">Portfolio</a>
-            <a href="#aboutme" class="btn">About Me</a>
-            <a href="#contact" class="btn">Contact</a>
-        </div>
-    </div>
-    <div id="intro">
-        <div class="hello">
-            <p class="hi"><strong>Hi, I'm Gaurav Arya</strong></p>
-            <p>Welcome to my portfolio page.<br> Here you can find information about my skills and projects.</p>
-        </div>
-        <div>
-            <img src="premium_photo.png" alt="Gaurav's Workspace" class="png">
-        </div>
-    </div>
-    <div class="line">
-        <h2 id="portfolio">Skills</h2>
-        <ul id="skills">
-            <div class="fend">
-                <p class="fw"><strong>Frontend Development</strong></p>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-            </div>
-
-            <div class="tools">
-                <p class="tls"><strong>Tools</strong></p>
-                <li>Frameworks</li>
-                <li>Libraries</li>
-                <li>API Integration</li>
-                <li>Git/Github</li>
-            </div>
-
-            <div class="pyth">
-                <p class="py"><strong>Python</strong></p>
-                <li>Have a basic understanding<br> of Python programming.</li>
-                <li>Projects like BMI Calculator<br> and Currency Converter</li>
-            </div>
-
-            <div class="soft">
-                <p class="sft"><strong>Soft Skills</strong></p>
-                <li>Effective Communication</li>
-                <li>Team Collaboration</li>
-                <li>Problem-Solving</li>
-                <li>Research & Analysis</li>
-            </div>
-
-        </ul>
-        <h2 id="project">Projects</h2>
-        <ul class="projects">
-            <div class="alc">
-                <p class="a"><strong>Alumni connect</strong></p>
-                <li>Hackathon Project</li>
-                <li>A platform to connect alumni with current students for mentorship and networking.</li>
-            </div>
-
-            <div class="sflix">
-                <p class="b"><strong>Streamflix</strong></p>
-                <li>Personal Project</li>
-                <li>A movie streaming website with user authentication and personalized recommendations.</li>
-            </div>
-
-            <div class="map">
-                <p class="c"><strong>MyMap</strong></p>
-                <li>Personal Project</li>
-                <li>An interactive map application that allows users to explore geographical data in playful theme.</li>
-            </div>
-
-        </ul>
-        <div class="line2">
-            <div id="aboutme">
-                <h2 id="about">About Me</h2>
-                <p>I am a first year Computer Science student at Madhav Institute of Technology and Science, Gwalior.
-                </p>
-                <p>Relevant academic experience includes coursework in Data Structures, Algorithms, Computer Graphics
-                    and
-                    UI/UX
-                    Design.</p>
-                <p>I am a passionate developer with a keen interest in creating web applications. I enjoy learning new
-                    technologies and applying them to solve real-world problems. In my free time, I like to play games,
-                    and
-                    work
-                    on personal coding projects.</p>
-            </div>
-
-            <div id="contact">
-                <h2 id="connect">Contact</h2>
-                <p>Email: <a href="mailto:itzgaurav57@gmail.com" class="d">itzgaurav57@gmail.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/gaurav-arya-763513373/" target="_blank"
-                        class="d">Gaurav
-                        Arya</a>
-                </p>
-                <p>GitHub: <a href="https://github.com/ui-gaurav" target="_blank" class="d">ui-gaurav</a></p>
-                <p>Resume: <a href="Gaurav Arya - CV.pdf" download class="d">Download Resume</a></p>
-            </div>
-        </div>
+    <div class="blob-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
     </div>
 
-    <footer id="footer">
-        <p>&copy; 2026 Gaurav Arya. All rights reserved.</p>
+    <!-- Navigation -->
+    <nav id="nav" class="glass-nav">
+        <div class="logo">Gaurav.</div>
+        <div class="nav-links">
+            <a href="#home" class="nav-btn">Home</a>
+            <a href="#skills" class="nav-btn">Skills</a>
+            <a href="#projects" class="nav-btn">Projects</a>
+            <a href="#about" class="nav-btn">About</a>
+            <a href="#contact" class="nav-btn">Contact</a>
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Welcome Hero Section -->
+        <section id="home" class="hero fade-in">
+            <div class="hero-content">
+                <span class="greeting">Welcome to my space</span>
+                <h1 class="hero-title">Hi, I'm <br><span class="gradient-text">Gaurav Arya</span></h1>
+                <p class="hero-subtitle">Frontend Developer & CS Student. I build exceptional, accessible, and visually stunning digital experiences.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn primary-btn">View My Work</a>
+                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper glass-card">
+                    <img src="premium_photo.png" alt="Gaurav's Workspace" onerror="this.onerror=null; this.src='https://via.placeholder.com/500x500/1a1b1f/00f2fe?text=Gaurav+Arya';">
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills padding-section fade-in">
+            <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+            <div class="bento-grid">
+                <div class="bento-item glass-card tech-card">
+                    <div class="card-icon"><i class="fa-brands fa-html5"></i> <i class="fa-brands fa-css3-alt"></i> <i class="fa-brands fa-js"></i></div>
+                    <h3>Frontend Development</h3>
+                    <ul class="skill-list">
+                        <li>HTML5</li>
+                        <li>Modern CSS3 (Flexbox/Grid/Animations)</li>
+                        <li>JavaScript (ES6+)</li>
+                    </ul>
+                </div>
+                
+                <div class="bento-item glass-card tech-card">
+                    <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Tools & Ecosystem</h3>
+                    <ul class="skill-list">
+                        <li>Frameworks & Libraries</li>
+                        <li>API Integration & Data Handling</li>
+                        <li>Git / GitHub Version Control</li>
+                    </ul>
+                </div>
+
+                <div class="bento-item glass-card tech-card">
+                    <div class="card-icon"><i class="fa-brands fa-python"></i></div>
+                    <h3>Python</h3>
+                    <ul class="skill-list">
+                        <li>Core Programming Concepts</li>
+                        <li>Projects: BMI Calculator</li>
+                        <li>Projects: Currency Converter</li>
+                    </ul>
+                </div>
+
+                <div class="bento-item glass-card tech-card">
+                    <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+                    <h3>Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Effective Communication</li>
+                        <li>Team Collaboration</li>
+                        <li>Problem-Solving</li>
+                        <li>Research & Analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects padding-section fade-in">
+            <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+            <div class="project-grid">
+                
+                <div class="project-card glass-card">
+                    <div class="project-info">
+                        <span class="project-tag">Hackathon</span>
+                        <h3>Alumni Connect</h3>
+                        <p>A structured platform designed to bridge the gap between alumni and current students, facilitating mentorship, guidance, and networking.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn secondary-btn small"><i class="fas fa-external-link-alt"></i> Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-info">
+                        <span class="project-tag">Personal Web App</span>
+                        <h3>Streamflix</h3>
+                        <p>A sophisticated movie streaming interface with user authentication flows and personalized content recommendations.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn secondary-btn small"><i class="fas fa-external-link-alt"></i> Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card">
+                    <div class="project-info">
+                        <span class="project-tag">Data Visualization</span>
+                        <h3>MyMap</h3>
+                        <p>An interactive map application enabling users to seamlessly explore geographical data wrapped in a playful, engaging theme.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn secondary-btn small"><i class="fas fa-external-link-alt"></i> Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About & Contact Section -->
+        <section class="split-section padding-section fade-in">
+            <div id="about" class="about glass-card">
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                <div class="about-content">
+                    <p class="lead">I am a first-year Computer Science student at Madhav Institute of Technology and Science, Gwalior.</p>
+                    <p>I am deeply passionate about web development, focusing on building applications that look great and feel seamless to use. My relevant academic experience spans Data Structures, Algorithms, Computer Graphics, and UI/UX Design, giving me a solid engineering foundation matched with design intuition.</p>
+                    <p>When I'm not coding, you can find me playing games or diving into new personal projects.</p>
+                </div>
+            </div>
+
+            <div id="contact" class="contact glass-card">
+                <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+                <div class="contact-links">
+                    <a href="mailto:itzgaurav57@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>itzgaurav57@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gaurav-arya-763513373/" target="_blank" class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                    <a href="https://github.com/ui-gaurav" target="_blank" class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Profile</span>
+                    </a>
+                    <a href="Gaurav Arya - CV.pdf" download class="contact-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Download Resume</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="glass-footer">
+        <p>&copy; 2026 Gaurav Arya. Designed & Built with passion.</p>
     </footer>
 
-</body>
+    <!-- Intersection Observer script for animations -->
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .bento-item, .project-card').forEach((el) => {
+            observer.observe(el);
+        });
+        
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
 </html>

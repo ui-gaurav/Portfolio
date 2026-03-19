@@ -18,6 +18,7 @@
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
     </div>
+    <div class="scroll-progress"></div>
 
     <!-- Navigation -->
     <nav id="nav" class="glass-nav">
@@ -214,6 +215,33 @@
         
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+        });
+
+        // Dynamic Scroll Effects
+        const progressBar = document.querySelector('.scroll-progress');
+        const nav = document.querySelector('.glass-nav');
+        const blobs = document.querySelectorAll('.blob');
+
+        window.addEventListener('scroll', () => {
+            let totalScroll = document.documentElement.scrollTop;
+            let windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            
+            // Progress Bar Width
+            let scrollPercentage = (totalScroll / windowHeight) * 100;
+            progressBar.style.width = scrollPercentage + '%';
+
+            // Shrink Nav on scroll
+            if (totalScroll > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            // Subtle parallax effect on background blobs
+            blobs.forEach((blob, index) => {
+                let speed = (index + 1) * -0.1;
+                blob.style.transform = `translateY(${totalScroll * speed}px)`;
+            });
         });
     </script>
 </body>

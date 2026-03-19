@@ -137,6 +137,17 @@ h1, h2, h3, h4, .logo {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+/* --- Scroll Progress Bar --- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  width: 0%;
+  z-index: 9999;
+}
+
 /* --- Navigation --- */
 .glass-nav {
   position: fixed;
@@ -156,6 +167,14 @@ h1, h2, h3, h4, .logo {
   align-items: center;
   z-index: 1000;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-nav.scrolled {
+  padding: 10px 30px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  top: 15px;
 }
 
 .logo {

@@ -461,23 +461,28 @@ h1, h2, h3, h4, .logo {
   gap: 60px;
 }
 
-.project-row {
+.project-block {
+  width: 100%;
+  position: relative;
   display: flex;
-  align-items: center;  /* Perfect horizontal alignment between card and image */
-  justify-content: space-between;
-  gap: 40px;
 }
-.project-row.reverse {
-  flex-direction: row-reverse;
+
+.project-grid .project-block:nth-child(odd) {
+  justify-content: flex-start;
+}
+
+.project-grid .project-block:nth-child(even) {
+  justify-content: flex-end;
 }
 
 .project-card {
-  width: 65%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 40px;
   margin: 0 !important;
+  z-index: 2;
 }
 
 .project-tag {
@@ -524,17 +529,23 @@ h1, h2, h3, h4, .logo {
   pointer-events: none;
 }
 
-.project-illustration {
-  width: 30%;
+.side-illustration {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25%;
   max-width: 300px;
   mix-blend-mode: multiply;
   pointer-events: none;
-  display: flex;
-  justify-content: center;
+  z-index: 0;
 }
-.project-illustration img {
-  width: 100%;
-  height: auto;
+
+.project-grid .project-block:nth-child(odd) .side-illustration {
+  right: 2%; /* Positioned loosely in the empty right space */
+}
+
+.project-grid .project-block:nth-child(even) .side-illustration {
+  left: 2%; /* Positioned loosely in the empty left space */
 }
 
 .about-char {
@@ -742,8 +753,9 @@ h1, h2, h3, h4, .logo {
     margin: 20px auto 40px;
   }
 
-  .project-row {
+  .project-block {
     flex-direction: column !important;
+    justify-content: center !important;
   }
 
   .bento-grid .bento-item,
@@ -754,8 +766,13 @@ h1, h2, h3, h4, .logo {
     align-self: center !important;
   }
   
-  .project-illustration {
-    width: 70%;
-    margin: 30px auto;
+  .side-illustration {
+    position: relative !important;
+    transform: none !important;
+    top: auto !important;
+    width: 60% !important;
+    margin: 30px auto 0 !important;
+    right: auto !important;
+    left: auto !important;
   }
 }

@@ -400,19 +400,19 @@ h1, h2, h3, h4, .logo {
 
 /* --- Skills Bento Grid --- */
 .bento-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
 .bento-grid .bento-item {
-  width: 55%;
+  width: 100%;
 }
 
-.bento-grid .bento-item:nth-child(1) { align-self: flex-start; margin-left: 0%; }
-.bento-grid .bento-item:nth-child(2) { align-self: flex-start; margin-left: 15%; }
-.bento-grid .bento-item:nth-child(3) { align-self: flex-start; margin-left: 30%; }
-.bento-grid .bento-item:nth-child(4) { align-self: flex-start; margin-left: 45%; }
+.bento-grid .bento-item:nth-child(1) { grid-column: 1 / -1; width: 55%; margin-left: 0; }
+.bento-grid .bento-item:nth-child(2) { grid-column: auto; }
+.bento-grid .bento-item:nth-child(3) { grid-column: auto; }
+.bento-grid .bento-item:nth-child(4) { grid-column: auto; }
 
 .tech-card {
   display: flex;
@@ -519,6 +519,7 @@ h1, h2, h3, h4, .logo {
   opacity: 0.9;
   max-width: 350px;
   width: 30vw;
+  mix-blend-mode: multiply; /* Automatically acts like a transparent background */
 }
 
 .static-skill {
@@ -732,8 +733,13 @@ h1, h2, h3, h4, .logo {
     font-size: 2.5rem;
   }
 
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
   .bento-grid .bento-item,
   .project-card {
+    grid-column: 1 / -1 !important;
     width: 100% !important;
     margin-left: 0 !important;
     align-self: center !important;

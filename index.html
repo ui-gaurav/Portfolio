@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaurav Arya | Frontend Developer</title>
-    <!-- Modern Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="pf.css">
 </head>
@@ -20,7 +18,6 @@
     </div>
     <div class="scroll-progress"></div>
 
-    <!-- Navigation -->
     <nav id="nav" class="glass-nav">
         <div class="logo">Gaurav.</div>
         <div class="nav-links">
@@ -36,7 +33,6 @@
     </nav>
 
     <main>
-        <!-- Welcome Hero Section -->
         <section id="home" class="hero fade-in">
             <div class="hero-content">
                 <span class="greeting">Welcome to my space</span>
@@ -64,7 +60,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="skills padding-section fade-in">
             <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
             <div class="bento-grid">
@@ -78,7 +73,6 @@
                     </ul>
                 </div>
 
-                <!-- Illustration Image Horizontally Aligned -->
                 <img src="port.png" alt="Skill Illustration" class="inline-illustration">
                 
                 <div class="bento-item glass-card tech-card">
@@ -114,7 +108,6 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="projects padding-section fade-in">
             <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
             <div class="project-grid">
@@ -159,7 +152,6 @@
                         </div>
                     </div>
 
-                    <!-- Map SVG Illustration -->
                     <svg class="side-illustration map-graphic" viewBox="0 0 200 200" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="mix-blend-mode: multiply;">
                         <style>
                             .map-path { fill: none; stroke: var(--text-main); stroke-width: 6; stroke-linejoin: round; }
@@ -180,10 +172,8 @@
             </div>
         </section>
 
-        <!-- About & Contact Section -->
         <section class="split-section padding-section fade-in">
             <div id="about" class="about glass-card">
-                <!-- Animated Character -->
                 <div class="floating-char about-char">
                     <div class="cartoon-guy">
                         <div class="head">
@@ -230,7 +220,6 @@
         <p>&copy; 2026 Gaurav Arya. Designed & Built with passion.</p>
     </footer>
 
-    <!-- Intersection Observer script for animations -->
     <script>
         const observerOptions = {
             root: null,
@@ -251,7 +240,6 @@
             observer.observe(el);
         });
         
-        // Mobile Navigation Toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         
@@ -259,7 +247,6 @@
             navLinks.classList.toggle('active');
         });
 
-        // Dynamic Scroll Effects
         const progressBar = document.querySelector('.scroll-progress');
         const nav = document.querySelector('.glass-nav');
         const blobs = document.querySelectorAll('.blob');
@@ -268,25 +255,21 @@
             let totalScroll = document.documentElement.scrollTop;
             let windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             
-            // Progress Bar Width
             let scrollPercentage = (totalScroll / windowHeight) * 100;
             progressBar.style.width = scrollPercentage + '%';
 
-            // Shrink Nav on scroll
             if (totalScroll > 50) {
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
             }
 
-            // Subtle parallax effect on background blobs
             blobs.forEach((blob, index) => {
                 let speed = (index + 1) * -0.1;
                 blob.style.transform = `translateY(${totalScroll * speed}px)`;
             });
         });
 
-        // Cartoon Eye Tracking
         const pupils = document.querySelectorAll('.pupil');
         document.addEventListener('mousemove', (e) => {
             pupils.forEach(pupil => {
@@ -295,7 +278,7 @@
                 let y = rect.top + rect.height / 2;
                 
                 let radian = Math.atan2(e.clientY - y, e.clientX - x);
-                let distance = 10; // Maximum eye movement distance
+                let distance = 10;
                 
                 pupil.style.transform = `translate(${Math.cos(radian) * distance}px, ${Math.sin(radian) * distance}px)`;
             });

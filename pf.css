@@ -517,6 +517,44 @@ h1, h2, h3, h4, .logo {
   pointer-events: none;
 }
 
+/* --- Line Art SVG Styling & Animation --- */
+.line-art-svg .stroke-main {
+  fill: none;
+  stroke: var(--text-main);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.line-art-svg .fill-main {
+  fill: var(--text-main);
+}
+
+.line-art-svg .stroke-accent {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.line-art-svg .float-item-1 { animation: float-svg 2.5s ease-in-out infinite alternate; }
+.line-art-svg .float-item-2 { animation: float-svg 3.5s ease-in-out infinite alternate-reverse; transform-origin: center; }
+.line-art-svg .type-anim { animation: typing-svg 0.4s infinite; transform-origin: 110px 105px; }
+.line-art-svg .tail-wag { transform-origin: 40px 160px; animation: wag-svg 1.8s infinite; }
+
+@keyframes float-svg {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-12px); }
+}
+@keyframes typing-svg {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-6deg); }
+}
+@keyframes wag-svg {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-15deg); }
+}
+
 .floating-char .cartoon-guy {
   transform: scale(0.6);
   transform-origin: center center;
@@ -540,8 +578,8 @@ h1, h2, h3, h4, .logo {
   transform: rotate(15deg);
   animation: peek-char 5s infinite ease-in-out alternate;
 }
-.about-char .cartoon-guy {
-  transform: scale(0.5);
+.about-char .line-art-svg {
+  transform: scale(0.65);
 }
 
 @keyframes float-char {

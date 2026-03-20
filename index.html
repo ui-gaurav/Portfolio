@@ -66,11 +66,9 @@
 
         <!-- Skills Section -->
         <section id="skills" class="skills padding-section fade-in">
-            <!-- Illustration Image -->
-            <img src="port.png" alt="Skill Illustration" class="static-illustration static-skill">
             <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
             <div class="bento-grid">
-                <div class="bento-item glass-card tech-card">
+                <div class="bento-item glass-card tech-card frontend-card">
                     <div class="card-icon"><i class="fa-brands fa-html5"></i> <i class="fa-brands fa-css3-alt"></i> <i class="fa-brands fa-js"></i></div>
                     <h3>Frontend Development</h3>
                     <ul class="skill-list">
@@ -79,6 +77,9 @@
                         <li>JavaScript (ES6+)</li>
                     </ul>
                 </div>
+
+                <!-- Illustration Image Horizontally Aligned -->
+                <img src="port.png" alt="Skill Illustration" class="inline-illustration">
                 
                 <div class="bento-item glass-card tech-card">
                     <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
@@ -115,42 +116,72 @@
 
         <!-- Projects Section -->
         <section id="projects" class="projects padding-section fade-in">
-            <!-- Illustration Images -->
-            <img src="port1.png" alt="Project Illustration 1" class="static-illustration static-project-1">
-            <img src="port2.png" alt="Project Illustration 2" class="static-illustration static-project-2">
             <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
             <div class="project-grid">
                 
-                <div class="project-card glass-card">
-                    <div class="project-info">
-                        <span class="project-tag">Hackathon</span>
+                <!-- Project Row 1 -->
+                <div class="project-row">
+                    <div class="project-card glass-card">
+                        <div class="project-info">
+                            <span class="project-tag">Hackathon</span>
                         <h3>Alumni Connect</h3>
                         <p>A structured platform designed to bridge the gap between alumni and current students, facilitating mentorship, guidance, and networking.</p>
                         <div class="project-links">
                             <a href="#" class="btn secondary-btn small"><i class="fas fa-external-link-alt"></i> Details</a>
                         </div>
                     </div>
+
+                    <div class="project-illustration right">
+                        <img src="port1.png" alt="Project Illustration 1">
+                    </div>
                 </div>
 
-                <div class="project-card glass-card">
-                    <div class="project-info">
-                        <span class="project-tag">Personal Web App</span>
+                <!-- Project Row 2 -->
+                <div class="project-row reverse">
+                    <div class="project-card glass-card">
+                        <div class="project-info">
+                            <span class="project-tag">Personal Web App</span>
                         <h3>Streamflix</h3>
                         <p>A sophisticated movie streaming interface with user authentication flows and personalized content recommendations.</p>
                         <div class="project-links">
                             <a href="#" class="btn secondary-btn small"><i class="fas fa-external-link-alt"></i> Details</a>
                         </div>
                     </div>
+
+                    <div class="project-illustration left">
+                        <img src="port2.png" alt="Project Illustration 2">
+                    </div>
                 </div>
 
-                <div class="project-card glass-card">
-                    <div class="project-info">
-                        <span class="project-tag">Data Visualization</span>
+                <!-- Project Row 3 -->
+                <div class="project-row">
+                    <div class="project-card glass-card">
+                        <div class="project-info">
+                            <span class="project-tag">Data Visualization</span>
                         <h3>MyMap</h3>
                         <p>An interactive map application enabling users to seamlessly explore geographical data wrapped in a playful, engaging theme.</p>
                         <div class="project-links">
                             <a href="#" class="btn secondary-btn small"><i class="fas fa-external-link-alt"></i> Details</a>
                         </div>
+                    </div>
+
+                    <!-- Map SVG Illustration -->
+                    <div class="project-illustration right map-graphic">
+                        <svg viewBox="0 0 200 200" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="mix-blend-mode: multiply;">
+                            <style>
+                                .map-path { fill: none; stroke: var(--text-main); stroke-width: 6; stroke-linejoin: round; }
+                                .map-fold { fill: none; stroke: var(--text-main); stroke-width: 6; stroke-linejoin: round; stroke-dasharray: 8 8; }
+                                .pin { fill: var(--primary); animation: map-bounce 2s infinite ease-in-out; transform-origin: center bottom; }
+                                @keyframes map-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+                            </style>
+                            <path class="map-path" d="M 20 70 L 70 40 L 130 70 L 180 40 L 180 150 L 130 180 L 70 150 L 20 180 Z" />
+                            <path class="map-fold" d="M 70 40 L 70 150 M 130 70 L 130 180" />
+                            <g class="pin">
+                                <path d="M 100 130 C 130 90 130 50 100 50 C 70 50 70 90 100 130 Z" />
+                                <circle fill="#fff" cx="100" cy="80" r="12" />
+                            </g>
+                            <ellipse cx="100" cy="140" rx="15" ry="5" fill="var(--text-main)" opacity="0.2" />
+                        </svg>
                     </div>
                 </div>
 

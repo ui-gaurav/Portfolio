@@ -409,10 +409,9 @@ h1, h2, h3, h4, .logo {
   width: 100%;
 }
 
-.bento-grid .bento-item:nth-child(1) { grid-column: 1 / -1; width: 55%; margin-left: 0; }
-.bento-grid .bento-item:nth-child(2) { grid-column: auto; }
-.bento-grid .bento-item:nth-child(3) { grid-column: auto; }
-.bento-grid .bento-item:nth-child(4) { grid-column: auto; }
+.frontend-card {
+  grid-column: 1 / 3 !important;
+}
 
 .tech-card {
   display: flex;
@@ -462,19 +461,23 @@ h1, h2, h3, h4, .logo {
   gap: 60px;
 }
 
+.project-row {
+  display: flex;
+  align-items: center;  /* Perfect horizontal alignment between card and image */
+  justify-content: space-between;
+  gap: 40px;
+}
+.project-row.reverse {
+  flex-direction: row-reverse;
+}
+
 .project-card {
-  width: 70%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 40px;
-}
-
-.project-grid .project-card:nth-child(odd) {
-  align-self: flex-start;
-}
-.project-grid .project-card:nth-child(even) {
-  align-self: flex-end;
+  margin: 0 !important;
 }
 
 .project-tag {
@@ -506,37 +509,32 @@ h1, h2, h3, h4, .logo {
   margin-top: auto;
 }
 
-/* --- Floating Characters & Relative Positioning --- */
+/* --- Inline Illustrations & Structural Alignment --- */
 .skills, .projects, .about {
   position: relative;
 }
 
-/* Base style for illustrations to prevent overlapping buttons */
-.static-illustration {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none; /* Prevents blocking clicks on 'View More' */
-  opacity: 0.9;
-  max-width: 350px;
-  width: 30vw;
-  mix-blend-mode: multiply; /* Automatically acts like a transparent background */
+.inline-illustration {
+  grid-column: 3 / 4;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  max-width: 280px;
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
 
-.static-skill {
-  top: 50px;
-  right: 5%;
+.project-illustration {
+  width: 30%;
+  max-width: 300px;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
 }
-
-.static-project-1 {
-  /* Placed safely on the right, since Card 1 sits on the left */
-  top: 50px;
-  right: 2%;
-}
-
-.static-project-2 {
-  /* Placed safely on the left, since Card 2 sits on the right */
-  top: 450px;
-  left: 2%;
+.project-illustration img {
+  width: 100%;
+  height: auto;
 }
 
 .about-char {
@@ -737,11 +735,27 @@ h1, h2, h3, h4, .logo {
     grid-template-columns: 1fr;
   }
 
+  .frontend-card, .inline-illustration {
+    grid-column: 1 / -1 !important;
+  }
+  .inline-illustration {
+    margin: 20px auto 40px;
+  }
+
+  .project-row {
+    flex-direction: column !important;
+  }
+
   .bento-grid .bento-item,
   .project-card {
     grid-column: 1 / -1 !important;
     width: 100% !important;
     margin-left: 0 !important;
     align-self: center !important;
+  }
+  
+  .project-illustration {
+    width: 70%;
+    margin: 30px auto;
   }
 }

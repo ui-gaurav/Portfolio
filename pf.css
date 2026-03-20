@@ -511,80 +511,45 @@ h1, h2, h3, h4, .logo {
   position: relative;
 }
 
-.floating-char {
+/* Base style for illustrations to prevent overlapping buttons */
+.static-illustration {
   position: absolute;
-  z-index: 5;
-  pointer-events: none;
+  z-index: 0;
+  pointer-events: none; /* Prevents blocking clicks on 'View More' */
+  opacity: 0.9;
+  max-width: 350px;
+  width: 30vw;
 }
 
-/* --- Line Art SVG Styling & Animation --- */
-.line-art-svg .stroke-main {
-  fill: none;
-  stroke: var(--text-main);
-  stroke-width: 4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.line-art-svg .fill-main {
-  fill: var(--text-main);
-}
-
-.line-art-svg .stroke-accent {
-  fill: none;
-  stroke: var(--primary);
-  stroke-width: 3;
-  stroke-linecap: round;
-}
-
-.line-art-svg .float-item-1 { animation: float-svg 2.5s ease-in-out infinite alternate; }
-.line-art-svg .float-item-2 { animation: float-svg 3.5s ease-in-out infinite alternate-reverse; transform-origin: center; }
-.line-art-svg .type-anim { animation: typing-svg 0.4s infinite; transform-origin: 110px 105px; }
-.line-art-svg .tail-wag { transform-origin: 40px 160px; animation: wag-svg 1.8s infinite; }
-
-@keyframes float-svg {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-12px); }
-}
-@keyframes typing-svg {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(-6deg); }
-}
-@keyframes wag-svg {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(-15deg); }
-}
-
-.floating-char .cartoon-guy {
-  transform: scale(0.6);
-  transform-origin: center center;
-}
-
-.skill-char {
-  top: 15%;
+.static-skill {
+  top: 50px;
   right: 5%;
-  animation: float-char 6s infinite ease-in-out alternate;
 }
 
-.project-char {
-  top: 30%;
+.static-project-1 {
+  /* Placed safely on the right, since Card 1 sits on the left */
+  top: 50px;
+  right: 2%;
+}
+
+.static-project-2 {
+  /* Placed safely on the left, since Card 2 sits on the right */
+  top: 450px;
   left: 2%;
-  animation: float-char 8s infinite ease-in-out alternate-reverse;
 }
 
 .about-char {
+  position: absolute;
   top: -60px;
   right: -30px;
   transform: rotate(15deg);
   animation: peek-char 5s infinite ease-in-out alternate;
-}
-.about-char .line-art-svg {
-  transform: scale(0.65);
+  z-index: 5;
+  pointer-events: none;
 }
 
-@keyframes float-char {
-  0% { transform: translateY(0px) rotate(0deg); }
-  100% { transform: translateY(-30px) rotate(5deg); }
+.about-char .cartoon-guy {
+  transform: scale(0.5);
 }
 
 @keyframes peek-char {

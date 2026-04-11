@@ -3,286 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaurav Arya | Frontend Developer</title>
+    <title>Gaurav Arya — Frontend Developer & UI/UX Designer</title>
+    <meta name="description" content="Frontend Developer & UI/UX Designer specializing in TypeScript, React, and Next.js. Building high-fidelity, performant digital experiences with engineering precision.">
+    <meta name="author" content="Gaurav Arya">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="pf.css">
 </head>
 <body>
-    <div class="blob-bg">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
-    <div class="scroll-progress"></div>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-    <nav id="nav" class="glass-nav">
-        <div class="logo">Gaurav.</div>
-        <div class="nav-links">
-            <a href="#home" class="nav-btn">Home</a>
-            <a href="#skills" class="nav-btn">Skills</a>
-            <a href="#projects" class="nav-btn">Projects</a>
-            <a href="#about" class="nav-btn">About</a>
-            <a href="#contact" class="nav-btn">Contact</a>
+    <!-- Ambient Background -->
+    <div class="ambient-bg" aria-hidden="true">
+        <div class="ambient-blob ambient-blob--cyan"></div>
+        <div class="ambient-blob ambient-blob--lime"></div>
+        <div class="ambient-blob ambient-blob--purple"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#hero" class="nav__logo">gaurav<span>.</span></a>
+        <div class="nav__links" id="navLinks">
+            <a href="#about" class="nav__link">About</a>
+            <a href="#skills" class="nav__link">Skills</a>
+            <a href="#projects" class="nav__link">Work</a>
+            <a href="#contact" class="nav__link">Contact</a>
+            <a href="Gaurav_Arya_Resume.pdf" download class="nav__cta">
+                <i class="fas fa-arrow-down"></i> Resume
+            </a>
         </div>
-        <div class="hamburger">
+        <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
-        </div>
+        </button>
+        <div class="nav__overlay" id="navOverlay"></div>
     </nav>
 
     <main>
-        <section id="home" class="hero fade-in">
-            <div class="hero-content">
-                <span class="greeting">Welcome to my space</span>
-                <h1 class="hero-title">Hello, I'm <br><span class="gradient-text">Gaurav Arya</span></h1>
-                <p class="hero-subtitle">Frontend Developer & CS Student. I build exceptional, accessible, and visually stunning digital experiences.</p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn primary-btn">View My Work</a>
-                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
-                </div>
+        <!-- ============================================================
+             HERO
+             ============================================================ -->
+        <section class="hero" id="hero">
+            <div class="hero__badge">
+                <span class="hero__badge-led"></span>
+                Open to Opportunities
             </div>
-            <div class="hero-image">
-                <div class="cartoon-guy">
-                    <div class="head">
-                        <div class="eye left-eye">
-                            <div class="pupil"></div>
-                        </div>
-                        <div class="eye right-eye">
-                            <div class="pupil"></div>
-                        </div>
-                        <div class="blush left"></div>
-                        <div class="blush right"></div>
-                        <div class="mouth"></div>
-                    </div>
-                </div>
+            <h1 class="hero__title">
+                CRAFTING <span class="hero__title-accent">PIXEL-PERFECT</span> DIGITAL EXPERIENCES.
+            </h1>
+            <p class="hero__subtitle">
+                Frontend Developer & UI/UX Designer with a designer's eye and an engineer's rigour. I build high-performance interfaces where aesthetics and architecture converge.
+            </p>
+            <div class="hero__actions">
+                <a href="#projects" class="btn btn--primary">
+                    <i class="fas fa-arrow-right"></i> View Selected Work
+                </a>
+                <a href="#contact" class="btn btn--ghost">
+                    Let's Connect
+                </a>
             </div>
         </section>
 
-        <section id="skills" class="skills padding-section fade-in">
-            <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
-            <div class="bento-grid">
-                <div class="bento-item glass-card tech-card frontend-card">
-                    <div class="card-icon"><i class="fa-brands fa-html5"></i> <i class="fa-brands fa-css3-alt"></i> <i class="fa-brands fa-js"></i></div>
-                    <h3>Frontend Development</h3>
-                    <ul class="skill-list">
-                        <li>HTML5</li>
-                        <li>Modern CSS3 (Flexbox/Grid/Animations)</li>
-                        <li>JavaScript (ES6+)</li>
-                    </ul>
+        <!-- ============================================================
+             ABOUT
+             ============================================================ -->
+        <div class="section-wrap--alt">
+            <section class="section" id="about">
+                <span class="section__label reveal">About</span>
+                <h2 class="section__heading reveal">Building Beyond the Screen.</h2>
+                <p class="section__subheading reveal">
+                    I combine a designer's sensibility with an engineer's rigour — comfortable reasoning through component architecture, state management, and UI/UX trade-offs.
+                </p>
+                <div class="about__grid">
+                    <div class="about__text reveal">
+                        <p>I am a first-year <span class="about__highlight">B.Tech student in Computer Science and Design</span> at Madhav Institute of Technology and Science (MITS), Gwalior (2025–2029).</p>
+                        <p>My work sits at the intersection of pixel-perfect aesthetics and robust technical architecture. I thrive in high-paced environments where I can leverage skills in TypeScript, React, Next.js, and UI Design to build tools that solve real problems.</p>
+                        <p>I am strongly motivated to build a long-term software engineering career in <span class="about__highlight">Japan</span>, drawn to its culture of craftsmanship, precision, and disciplined collaboration.</p>
+                    </div>
+                    <div class="about__details reveal-stagger">
+                        <div class="about__detail-card">
+                            <div class="about__detail-label">Education</div>
+                            <div class="about__detail-value">B.Tech — Computer Science & Design</div>
+                            <div class="about__detail-sub">MITS Gwalior · 2025 – 2029</div>
+                        </div>
+                        <div class="about__detail-card">
+                            <div class="about__detail-label">Focus Areas</div>
+                            <div class="about__detail-value">Frontend Architecture & Performance</div>
+                            <div class="about__detail-sub">TypeScript · React · Next.js · UI/UX</div>
+                        </div>
+                        <div class="about__detail-card">
+                            <div class="about__detail-label">Aspiration</div>
+                            <div class="about__detail-value">Software Engineer — Japan</div>
+                            <div class="about__detail-sub">Precision engineering · Craftsmanship-driven development</div>
+                        </div>
+                    </div>
                 </div>
+            </section>
+        </div>
 
-                <img src="port.png" alt="Skill Illustration" class="inline-illustration">
-                
-                <div class="bento-item glass-card tech-card">
-                    <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
-                    <h3>Tools & Ecosystem</h3>
-                    <ul class="skill-list">
-                        <li>Frameworks & Libraries</li>
-                        <li>API Integration & Data Handling</li>
-                        <li>Git / GitHub Version Control</li>
-                    </ul>
-                </div>
+        <!-- ============================================================
+             SKILLS — TECHNICAL ARSENAL
+             ============================================================ -->
+        <section class="section" id="skills">
+            <span class="section__label reveal">Technical Arsenal</span>
+            <h2 class="section__heading reveal">The Right Tool for the Job.</h2>
+            <p class="section__subheading reveal">
+                My stack is constantly evolving. Here's what I use to craft high-performance, pixel-perfect interfaces.
+            </p>
 
-                <div class="bento-item glass-card tech-card">
-                    <div class="card-icon"><i class="fa-brands fa-python"></i></div>
-                    <h3>Python</h3>
-                    <ul class="skill-list">
-                        <li>Core Programming Concepts</li>
-                        <li>Projects: BMI Calculator</li>
-                        <li>Projects: Currency Converter</li>
+            <div class="skills__grid reveal-stagger">
+                <div class="skills__column">
+                    <div class="skills__column-title">Frontend Development</div>
+                    <ul class="skills__list">
+                        <li class="skills__item"><i class="devicon-typescript-plain"></i> TypeScript</li>
+                        <li class="skills__item"><i class="devicon-javascript-plain"></i> JavaScript (ES6+)</li>
+                        <li class="skills__item"><i class="devicon-react-original"></i> React</li>
+                        <li class="skills__item"><i class="devicon-nextjs-plain"></i> Next.js</li>
+                        <li class="skills__item"><i class="devicon-tailwindcss-original"></i> Tailwind CSS</li>
+                        <li class="skills__item"><i class="devicon-html5-plain"></i> HTML5</li>
+                        <li class="skills__item"><i class="devicon-css3-plain"></i> CSS3</li>
                     </ul>
                 </div>
+                <div class="skills__column">
+                    <div class="skills__column-title">Design</div>
+                    <ul class="skills__list">
+                        <li class="skills__item"><i class="devicon-figma-plain"></i> Figma</li>
+                        <li class="skills__item"><i class="fas fa-bezier-curve"></i> SVG Animations</li>
+                        <li class="skills__item"><i class="fas fa-mobile-screen"></i> Responsive Web Design</li>
+                        <li class="skills__item"><i class="fas fa-pen-ruler"></i> UI/UX Principles</li>
+                    </ul>
+                </div>
+                <div class="skills__column">
+                    <div class="skills__column-title">Tools & APIs</div>
+                    <ul class="skills__list">
+                        <li class="skills__item"><i class="devicon-git-plain"></i> Git</li>
+                        <li class="skills__item"><i class="devicon-github-original"></i> GitHub</li>
+                        <li class="skills__item"><i class="fas fa-plug"></i> REST APIs</li>
+                        <li class="skills__item"><i class="fas fa-location-dot"></i> Geolocation API</li>
+                        <li class="skills__item"><i class="fas fa-map"></i> Maps JS API</li>
+                        <li class="skills__item"><i class="fas fa-database"></i> Web Storage API</li>
+                        <li class="skills__item"><i class="devicon-linux-plain"></i> Linux / Unix CLI</li>
+                    </ul>
+                </div>
+            </div>
 
-                <div class="bento-item glass-card tech-card">
-                    <div class="card-icon"><i class="fa-solid fa-users"></i></div>
-                    <h3>Soft Skills</h3>
-                    <ul class="skill-list">
-                        <li>Effective Communication</li>
-                        <li>Team Collaboration</li>
-                        <li>Problem-Solving</li>
-                        <li>Research & Analysis</li>
-                    </ul>
-                </div>
+            <!-- Certifications -->
+            <div class="certs__grid reveal-stagger">
+                <div class="cert__chip"><i class="fas fa-certificate"></i> HTML Module</div>
+                <div class="cert__chip"><i class="fas fa-certificate"></i> CSS Module</div>
+                <div class="cert__chip"><i class="fas fa-certificate"></i> Web Development</div>
+                <div class="cert__chip"><i class="fas fa-certificate"></i> UI/UX Fundamentals</div>
             </div>
         </section>
 
-        <section id="projects" class="projects padding-section fade-in">
-            <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
-            <div class="project-grid">
-                
-                <div class="project-block">
-                    <div class="project-card glass-card">
-                        <div class="project-info">
-                            <span class="project-tag">Assignment</span>
-                            <h3>Weather Dashboard</h3>
-                            <p>This is a sleek, responsive web application that provides real-time weather updates and multi-day forecasts. It features dynamic backgrounds, glassmorphism UI, and automatic location detection via the OpenWeatherMap API.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/ui-gaurav/WeatherDashboard" class="btn secondary-btn small"><i class="fas fa-external-link-alt"></i> Details</a>
+        <!-- ============================================================
+             PROJECTS — SELECTED WORK
+             ============================================================ -->
+        <div class="section-wrap--alt">
+            <section class="section" id="projects">
+                <span class="section__label reveal">Selected Work</span>
+                <h2 class="section__heading reveal">Projects That Push Boundaries.</h2>
+                <p class="section__subheading reveal">
+                    Each project represents a deliberate technical decision — not just what was built, but why.
+                </p>
+
+                <div class="projects__list">
+
+                    <!-- ========== PROJECT 1: Ravindra IAS v2 (HERO) ========== -->
+                    <article class="project--hero reveal" id="project-ravindra">
+                        <div class="project__header">
+                            <div>
+                                <span class="project__badge project__badge--competition">
+                                    <i class="fas fa-trophy"></i> College Frontend Competition
+                                </span>
+                                <span class="project__badge project__badge--time">
+                                    <i class="fas fa-bolt"></i> Built in 2 Hours
+                                </span>
                             </div>
                         </div>
-                    </div>
-                    <img src="port1.png" alt="Project Illustration 1" class="side-illustration">
-                </div>
+                        <h3 class="project__title">Ravindra IAS v2</h3>
+                        <div class="project__stack">TypeScript · React · Next.js 14 · Tailwind CSS</div>
 
-                <div class="project-block">
-                    <div class="project-card glass-card">
-                        <div class="project-info">
-                            <span class="project-tag">Personal Web App</span>
-                            <h3>Streamflix</h3>
-                            <p>A sophisticated movie streaming interface with user authentication flows and personalized content recommendations.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/ui-gaurav/Streamflix" class="btn secondary-btn small"><i class="fas fa-external-link-alt"></i> Details</a>
+                        <p class="project__desc">
+                            A <strong>5-page educational platform</strong> for a real UPSC coaching institute, redesigned from scratch during a college competition. I chose Next.js specifically for its server-side rendering capability — a decision validated by the <strong>100 SEO score</strong>. The redesign replaced a decade-old WordPress site and beat the original production site in every Lighthouse metric.
+                        </p>
+
+                        <!-- Lighthouse Scores -->
+                        <div class="lighthouse">
+                            <div class="lighthouse__metric lighthouse__metric--perf">
+                                <span class="lighthouse__score">99</span>
+                                <span class="lighthouse__label">Performance</span>
+                            </div>
+                            <div class="lighthouse__metric lighthouse__metric--a11y">
+                                <span class="lighthouse__score">94</span>
+                                <span class="lighthouse__label">Accessibility</span>
+                            </div>
+                            <div class="lighthouse__metric lighthouse__metric--bp">
+                                <span class="lighthouse__score">100</span>
+                                <span class="lighthouse__label">Best Practices</span>
+                            </div>
+                            <div class="lighthouse__metric lighthouse__metric--seo">
+                                <span class="lighthouse__score">100</span>
+                                <span class="lighthouse__label">SEO</span>
                             </div>
                         </div>
-                    </div>
-                    <img src="port2.png" alt="Project Illustration 2" class="side-illustration">
-                </div>
 
-                <div class="project-block">
-                    <div class="project-card glass-card">
-                        <div class="project-info">
-                            <span class="project-tag">Data Visualization</span>
-                            <h3>MyMap</h3>
-                            <p>An interactive map application enabling users to seamlessly explore geographical data wrapped in a playful, engaging theme.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/ui-gaurav/MyMap" class="btn secondary-btn small"><i class="fas fa-external-link-alt"></i> Details</a>
+                        <div class="project__highlights">
+                            <div class="project__highlight">
+                                <i class="fas fa-circle"></i>
+                                <span>Beat the original WordPress site (79 Perf, 92 SEO) across all metrics</span>
+                            </div>
+                            <div class="project__highlight">
+                                <i class="fas fa-circle"></i>
+                                <span>88.2% TypeScript coverage — type safety across the entire codebase</span>
+                            </div>
+                            <div class="project__highlight">
+                                <i class="fas fa-circle"></i>
+                                <span>5 pages: Home, About, Courses, Study Resources, Our Selections</span>
                             </div>
                         </div>
-                    </div>
 
-                    <svg class="side-illustration map-graphic" viewBox="0 0 200 200" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="mix-blend-mode: multiply;">
-                        <style>
-                            .map-path { fill: none; stroke: var(--text-main); stroke-width: 6; stroke-linejoin: round; }
-                            .map-fold { fill: none; stroke: var(--text-main); stroke-width: 6; stroke-linejoin: round; stroke-dasharray: 8 8; }
-                            .pin { fill: var(--primary); animation: map-bounce 2s infinite ease-in-out; transform-origin: center bottom; }
-                            @keyframes map-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-                        </style>
-                        <path class="map-path" d="M 20 70 L 70 40 L 130 70 L 180 40 L 180 150 L 130 180 L 70 150 L 20 180 Z" />
-                        <path class="map-fold" d="M 70 40 L 70 150 M 130 70 L 130 180" />
-                        <g class="pin">
-                            <path d="M 100 130 C 130 90 130 50 100 50 C 70 50 70 90 100 130 Z" />
-                            <circle fill="#fff" cx="100" cy="80" r="12" />
-                        </g>
-                        <ellipse cx="100" cy="140" rx="15" ry="5" fill="var(--text-main)" opacity="0.2" />
-                    </svg>
+                        <div class="project__actions">
+                            <a href="https://ravindra-ias-v2.vercel.app/" target="_blank" class="btn btn--primary btn--small">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/ui-gaurav/ravindra-ias-v2" target="_blank" class="btn btn--ghost btn--small">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ========== PROJECT 2: TravelIn ========== -->
+                    <article class="project--standard reveal" id="project-travelin">
+                        <div class="project__header">
+                            <span class="project__badge project__badge--team">
+                                <i class="fas fa-users"></i> Team of 3
+                            </span>
+                        </div>
+                        <h3 class="project__title">TravelIn</h3>
+                        <div class="project__stack">CSS · JavaScript · Flights API · Hotels API · Maps JS API · Weather API</div>
+
+                        <p class="project__desc">
+                            An <strong>integrated travel planning dashboard</strong> unifying 4 external APIs into a single coherent interface. I owned the entire API integration layer — building async data-fetching, error handling, and response normalisation across Flights, Hotels, Maps, and Weather services. Defined data contracts and interface boundaries with 2 teammates.
+                        </p>
+
+                        <div class="project__highlights">
+                            <div class="project__highlight">
+                                <i class="fas fa-circle"></i>
+                                <span>Unified dashboard aggregating 4 external APIs into one interface</span>
+                            </div>
+                            <div class="project__highlight">
+                                <i class="fas fa-circle"></i>
+                                <span>Individually built: async data-fetching, error handling, and response normalisation</span>
+                            </div>
+                            <div class="project__highlight">
+                                <i class="fas fa-circle"></i>
+                                <span>Defined data contracts and interface boundaries with 2 teammates</span>
+                            </div>
+                        </div>
+
+                        <div class="project__actions">
+                            <a href="https://github.com/ui-gaurav/TravelIn" target="_blank" class="btn btn--ghost btn--small">
+                                <i class="fab fa-github"></i> Repository (Private)
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ========== PROJECT 3: WeatherDashboard ========== -->
+                    <article class="project--standard reveal" id="project-weather">
+                        <div class="project__header">
+                            <span class="project__badge project__badge--personal">
+                                <i class="fas fa-code"></i> Personal Project
+                            </span>
+                        </div>
+                        <h3 class="project__title">WeatherDashboard</h3>
+                        <div class="project__stack">HTML · CSS · JavaScript · Geolocation API · OpenWeatherMap API</div>
+
+                        <p class="project__desc">
+                            A <strong>real-time weather application</strong> with dual input modes: automatic location detection via the Geolocation API and manual city search. Built with deliberate error-state handling — the app gracefully manages location denial, invalid city input, and network failures with clear user feedback.
+                        </p>
+
+                        <div class="project__highlights">
+                            <div class="project__highlight">
+                                <i class="fas fa-circle"></i>
+                                <span>2-mode app: auto-detects live location via Geolocation API + manual city search</span>
+                            </div>
+                            <div class="project__highlight">
+                                <i class="fas fa-circle"></i>
+                                <span>Handles 3 failure states: location denied, city not found, network error</span>
+                            </div>
+                            <div class="project__highlight">
+                                <i class="fas fa-circle"></i>
+                                <span>Dynamic DOM re-rendering on every API response — no framework, pure JavaScript</span>
+                            </div>
+                        </div>
+
+                        <div class="project__actions">
+                            <a href="https://ui-gaurav.github.io/WeatherDashboard/" target="_blank" class="btn btn--primary btn--small">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/ui-gaurav/WeatherDashboard" target="_blank" class="btn btn--ghost btn--small">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </article>
+
                 </div>
+            </section>
+        </div>
 
+        <!-- ============================================================
+             CONTACT — CTA
+             ============================================================ -->
+        <section class="cta" id="contact">
+            <span class="section__label reveal">Get in Touch</span>
+            <h2 class="cta__heading reveal">
+                Let's Build Something <span class="cta__heading-accent">Remarkable.</span>
+            </h2>
+            <p class="cta__text reveal">
+                Currently seeking internship and collaboration opportunities. I'm open to remote work and relocating — especially to Japan.
+            </p>
+            <div class="cta__actions reveal">
+                <a href="mailto:itzgaurav57@gmail.com" class="btn btn--primary">
+                    <i class="fas fa-envelope"></i> Say Hello
+                </a>
+                <a href="Gaurav_Arya_Resume.pdf" download class="btn btn--ghost">
+                    <i class="fas fa-arrow-down"></i> Download Resume
+                </a>
             </div>
-        </section>
-
-        <section class="split-section padding-section fade-in">
-            <div id="about" class="about glass-card">
-                <div class="floating-char about-char">
-                    <div class="cartoon-guy">
-                        <div class="head">
-                            <div class="eye left-eye"><div class="pupil"></div></div>
-                            <div class="eye right-eye"><div class="pupil"></div></div>
-                            <div class="blush left"></div><div class="blush right"></div>
-                            <div class="mouth"></div>
-                        </div>
-                    </div>
-                </div>
-                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
-                <div class="about-content">
-                    <p class="lead">I am a first-year Computer Science student at Madhav Institute of Technology and Science, Gwalior.</p>
-                    <p>I am deeply passionate about web development, focusing on building applications that look great and feel seamless to use. My relevant academic experience spans Data Structures, Algorithms, Computer Graphics, and UI/UX Design, giving me a solid engineering foundation matched with design intuition.</p>
-                    <p>When I'm not coding, you can find me playing games or diving into new personal projects.</p>
-                </div>
-            </div>
-
-            <div id="contact" class="contact glass-card">
-                <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
-                <div class="contact-links">
-                    <a href="mailto:itzgaurav57@gmail.com" class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>itzgaurav57@gmail.com</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/gaurav-arya-763513373/" target="_blank" class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn Profile</span>
-                    </a>
-                    <a href="https://github.com/ui-gaurav" target="_blank" class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub Profile</span>
-                    </a>
-                    <a href="Gaurav Arya - CV.pdf" download class="contact-item">
-                        <i class="fas fa-file-pdf"></i>
-                        <span>Download Resume</span>
-                    </a>
-                </div>
+            <a href="mailto:itzgaurav57@gmail.com" class="cta__email reveal">itzgaurav57@gmail.com</a>
+            <div class="cta__socials reveal">
+                <a href="https://www.linkedin.com/in/gaurav-arya-763513373/" target="_blank" class="cta__social" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/ui-gaurav" target="_blank" class="cta__social" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
         </section>
     </main>
 
-    <footer id="footer" class="glass-footer">
-        <p>&copy; 2026 Gaurav Arya. Designed & Built with passion.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer__text">© 2026 Gaurav Arya. Engineered with precision & passion.</p>
     </footer>
 
-    <script>
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in, .bento-item, .project-card').forEach((el) => {
-            observer.observe(el);
-        });
-        
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        const progressBar = document.querySelector('.scroll-progress');
-        const nav = document.querySelector('.glass-nav');
-        const blobs = document.querySelectorAll('.blob');
-
-        window.addEventListener('scroll', () => {
-            let totalScroll = document.documentElement.scrollTop;
-            let windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            
-            let scrollPercentage = (totalScroll / windowHeight) * 100;
-            progressBar.style.width = scrollPercentage + '%';
-
-            if (totalScroll > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-
-            blobs.forEach((blob, index) => {
-                let speed = (index + 1) * -0.1;
-                blob.style.transform = `translateY(${totalScroll * speed}px)`;
-            });
-        });
-
-        const pupils = document.querySelectorAll('.pupil');
-        document.addEventListener('mousemove', (e) => {
-            pupils.forEach(pupil => {
-                let rect = pupil.parentElement.getBoundingClientRect();
-                let x = rect.left + rect.width / 2;
-                let y = rect.top + rect.height / 2;
-                
-                let radian = Math.atan2(e.clientY - y, e.clientX - x);
-                let distance = 10;
-                
-                pupil.style.transform = `translate(${Math.cos(radian) * distance}px, ${Math.sin(radian) * distance}px)`;
-            });
-        });
-    </script>
+    <script src="pf.js"></script>
 </body>
 </html>
